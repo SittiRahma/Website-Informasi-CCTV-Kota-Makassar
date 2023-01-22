@@ -10,6 +10,24 @@ let chartJlKadir = []
 let tanggalJlKadir = []
 let DataJlKadir = []
 
+
+let btnCobaHarian = false;
+let btnCobaPekanan = false;
+let btnCobaSatuBulan = false;
+let btnCobaDuaBulan = false;
+let btnCobaTigaBulan = false;
+let btnCobaEmpatBulan = false;
+let btnCobaAmirullah = false;
+let btnCobaAbdulKadir = false;
+let btnCobaAdhyaksa = false;
+let btnCobaAlauddin = false;
+let btnCobaBajiGau = false;
+let btnCobaBarukang = false;
+let btnCobaCakalang = false;
+let btnCobaTataHaji = false;
+let btnCobaFlyover = false;
+let btnCobaKajaolaliddo = false;
+
 const preloader = document.getElementById("preloader");
 let btnGrafikAdhayksa = document.getElementById('grafikAdhyaksa')
 let btnGrafikAbdKadir = document.getElementById('grafikAbdKadir')
@@ -70,34 +88,44 @@ btnSatuBulan.addEventListener("click", function(){
     console.log('ini adalah percobaan button 1 hari')
  })
 
-// const tombolPekan = inibuttonPekan.addEventListener("click", function(){
-//     console.log('ini adalah percobaan button 1 pekan')
-//     //getAPI("grafikSatuPekan")
-// })
-
 //Percobaan button 1 pekan
-btnGrafikAmirullah.addEventListener("click", handleButtonAmirullah);
 btnHari.addEventListener("click", handleButtonHarian);
 btnPekan.addEventListener("click", handleButtonPekanan);
 btnSatuBulan.addEventListener("click", handleButtonSatuBulan);
 btnDuaBulan.addEventListener("click", handleButtonDuaBulan);
 btnTigaBulan.addEventListener("click", handleButtonTigaBulan);
 btnEmpatBulan.addEventListener("click", handleButtonEmpatBulan);
-
-let btnCobaAmirullah = false;
-let btnCobaHarian = false;
-let btnCobaPekanan = false;
-let btnCobaSatuBulan = false;
-let btnCobaDuaBulan = false;
-let btnCobaTigaBulan = false;
-let btnCobaEmpatBulan = false;
+btnGrafikAmirullah.addEventListener("click", handleButtonAmirullah);
+btnGrafikAbdKadir.addEventListener("click", handleButtonAbdulKadir);
+btnGrafikAdhayksa.addEventListener("click", handleButtonAdhyaksa);
+btnGrafikAlauddin.addEventListener("click", handleButtonAlauddin);
+btnGrafikBajiGau.addEventListener("click", handleButtonBajiGau);
+btnGrafikBarukang.addEventListener("click", handleButtonBarukang);
+btnGrafikCakalangPanampu.addEventListener("click", handleButtonCakalang);
+btnGrafikTataHaji.addEventListener("click", handleButtonTataHaji);
+btnGrafikFlyover.addEventListener("click", handleButtonFlyover);
+btnGrafikKajaolaliddo.addEventListener("click", handleButtonKajaolaliddo);
 
 function setFalse(){
+    btnCobaHarian = false;
     btnCobaPekanan = false;
     btnCobaSatuBulan = false;
     btnCobaDuaBulan = false;
     btnCobaTigaBulan = false;
     btnCobaEmpatBulan = false;
+}
+
+function setFalseJalanan(){
+    btnCobaAbdulKadir = false;
+    btnCobaAdhyaksa = false;
+    btnCobaAlauddin = false;
+    btnCobaAmirullah = false;
+    btnCobaBajiGau = false;
+    btnCobaBarukang = false;
+    btnCobaCakalang = false;
+    btnCobaFlyover = false;
+    btnCobaKajaolaliddo = false;
+    btnCobaTataHaji = false;
 }
 
 function loader(){
@@ -108,7 +136,62 @@ function loader(){
 }
 
 function handleButtonAmirullah() {
+    setFalseJalanan()
     btnCobaAmirullah = true;
+    checkButtons();
+}
+
+function handleButtonAbdulKadir() {
+    setFalseJalanan();
+    btnCobaAbdulKadir = true;
+    checkButtons();
+}
+
+function handleButtonAdhyaksa() {
+    setFalseJalanan();
+    btnCobaAdhyaksa = true;
+    checkButtons();
+}
+
+function handleButtonAlauddin() {
+    setFalseJalanan()
+    btnCobaAlauddin = true;
+    checkButtons();
+}
+
+function handleButtonBajiGau() {
+    setFalseJalanan();
+    btnCobaBajiGau = true;
+    checkButtons();
+}
+
+function handleButtonBarukang() {
+    setFalseJalanan();
+    btnCobaBarukang = true;
+    checkButtons();
+}
+
+function handleButtonCakalang() {
+    setFalseJalanan();
+    btnCobaCakalang = true;
+    checkButtons();
+}
+
+function handleButtonTataHaji() {
+    setFalseJalanan();
+    btnCobaTataHaji = true;
+    checkButtons();
+}
+
+function handleButtonFlyover() {
+    setFalseJalanan();
+    btnCobaFlyover = true;
+    checkButtons();
+}
+
+function handleButtonKajaolaliddo() {
+    setFalseJalanan();
+    btnCobaKajaolaliddo = true;
     checkButtons();
 }
   
@@ -144,7 +227,7 @@ function handleButtonEmpatBulan() {
 
 function checkButtons() {
     if (btnCobaAmirullah && btnCobaPekanan) {
-      // menampilkan data
+       
       loader()
       console.log('Ini grafik pekanan Amirullah')
       getAPI("grafikpekananAmirullah").then(() => {
@@ -156,7 +239,7 @@ function checkButtons() {
       setFalse()
      }
      else if (btnCobaAmirullah && btnCobaSatuBulan) {
-        // menampilkan data
+         
         loader()
         console.log('Ini grafik Satu Bulan Amirullah')
         getAPI("grafikSatuBulanAmirullah").then(() => {
@@ -168,7 +251,7 @@ function checkButtons() {
         setFalse()
     }
     else if (btnCobaAmirullah && btnCobaDuaBulan) {
-        // menampilkan data
+         
         loader()
         console.log('Ini grafik Dua Bulan Amirullah')
         getAPI("grafikDuaBulanAmirullah").then(() => {
@@ -179,7 +262,7 @@ function checkButtons() {
         })
         setFalse()
     }else if (btnCobaAmirullah && btnCobaTigaBulan) {
-        // menampilkan data
+         
         loader()
         console.log('Ini grafik Tiga Bulan Amirullah')
         getAPI("grafikTigaBulanAmirullah").then(() => {
@@ -190,7 +273,7 @@ function checkButtons() {
         })
         setFalse()
     }else if (btnCobaAmirullah && btnCobaEmpatBulan) {
-        // menampilkan data
+         
         loader()
         console.log('Ini grafik Empat Bulan Amirullah')
         getAPI("grafikEmpatBulanAmirullah").then(() => {
@@ -201,7 +284,7 @@ function checkButtons() {
         })
         setFalse()
     }else if (btnCobaAmirullah && btnCobaHarian) {
-        // menampilkan data
+         
         loader()
         console.log('Jalan Amirullah')
         getAPI("grafikAmirullah").then(() => {
@@ -212,6 +295,644 @@ function checkButtons() {
         })
         setFalse()
     }
+    // Abdul Kadir
+    else if (btnCobaAbdulKadir && btnCobaPekanan) {
+         
+        loader()
+        console.log('Ini grafik pekanan AbdulKadir')
+        getAPI("grafikpekananAbdulKadir").then(() => {
+              preloader.style.display = "none";
+          }).catch((error) => {
+              console.log(error)
+              preloader.style.display = "none";
+          })
+        setFalse()
+       }
+       else if (btnCobaAbdulKadir && btnCobaSatuBulan) {
+           
+          loader()
+          console.log('Ini grafik Satu Bulan AbdulKadir')
+          getAPI("grafikSatuBulanAbdulKadir").then(() => {
+              preloader.style.display = "none";
+          }).catch((error) => {
+              console.log(error)
+              preloader.style.display = "none";
+          })
+          setFalse()
+      }
+      else if (btnCobaAbdulKadir && btnCobaDuaBulan) {
+           
+          loader()
+          console.log('Ini grafik Dua Bulan AbdulKadir')
+          getAPI("grafikDuaBulanAbdulKadir").then(() => {
+              preloader.style.display = "none";
+          }).catch((error) => {
+              console.log(error)
+              preloader.style.display = "none";
+          })
+          setFalse()
+      }else if (btnCobaAbdulKadir && btnCobaTigaBulan) {
+           
+          loader()
+          console.log('Ini grafik Tiga Bulan AbdulKadir')
+          getAPI("grafikTigaBulanAbdulKadir").then(() => {
+              preloader.style.display = "none";
+          }).catch((error) => {
+              console.log(error)
+              preloader.style.display = "none";
+          })
+          setFalse()
+      }else if (btnCobaAbdulKadir && btnCobaEmpatBulan) {
+           
+          loader()
+          console.log('Ini grafik Empat Bulan AbdulKadir')
+          getAPI("grafikEmpatBulanAbdulKadir").then(() => {
+              preloader.style.display = "none";
+          }).catch((error) => {
+              console.log(error)
+              preloader.style.display = "none";
+          })
+          setFalse()
+      }else if (btnCobaAbdulKadir && btnCobaHarian) {
+           
+          loader()
+          console.log('Jalan AbdulKadir')
+          getAPI("grafikAbdulKadir").then(() => {
+              preloader.style.display = "none";
+          }).catch((error) => {
+              console.log(error)
+              preloader.style.display = "none";
+          })
+          setFalse()
+      }
+      // Adhyaksa 
+      else if (btnCobaAdhyaksa && btnCobaPekanan) {
+         
+        loader()
+        console.log('Ini grafik pekanan Adhyaksa')
+        getAPI("grafikpekananAdhyaksa").then(() => {
+              preloader.style.display = "none";
+          }).catch((error) => {
+              console.log(error)
+              preloader.style.display = "none";
+          })
+        setFalse()
+       }
+       else if (btnCobaAdhyaksa && btnCobaSatuBulan) {
+           
+          loader()
+          console.log('Ini grafik Satu Bulan Adhyaksa')
+          getAPI("grafikSatuBulanAdhyaksa").then(() => {
+              preloader.style.display = "none";
+          }).catch((error) => {
+              console.log(error)
+              preloader.style.display = "none";
+          })
+          setFalse()
+      }
+      else if (btnCobaAdhyaksa && btnCobaDuaBulan) {
+           
+          loader()
+          console.log('Ini grafik Dua Bulan Adhyaksa')
+          getAPI("grafikDuaBulanAdhyaksa").then(() => {
+              preloader.style.display = "none";
+          }).catch((error) => {
+              console.log(error)
+              preloader.style.display = "none";
+          })
+          setFalse()
+      }else if (btnCobaAdhyaksa && btnCobaTigaBulan) {
+           
+          loader()
+          console.log('Ini grafik Tiga Bulan Adhyaksa')
+          getAPI("grafikTigaBulanAdhyaksa").then(() => {
+              preloader.style.display = "none";
+          }).catch((error) => {
+              console.log(error)
+              preloader.style.display = "none";
+          })
+          setFalse()
+      }else if (btnCobaAdhyaksa && btnCobaEmpatBulan) {
+           
+          loader()
+          console.log('Ini grafik Empat Bulan Adhyaksa')
+          getAPI("grafikEmpatBulanAdhyaksa").then(() => {
+              preloader.style.display = "none";
+          }).catch((error) => {
+              console.log(error)
+              preloader.style.display = "none";
+          })
+          setFalse()
+      }else if (btnCobaAdhyaksa && btnCobaHarian) {
+           
+          loader()
+          console.log('Jalan Adhyaksa')
+          getAPI("grafikAdhyaksa").then(() => {
+              preloader.style.display = "none";
+          }).catch((error) => {
+              console.log(error)
+              preloader.style.display = "none";
+          })
+          setFalse()
+      }
+      
+      // Alauddin
+      else if (btnCobaAlauddin && btnCobaPekanan) {
+         
+        loader()
+        console.log('Ini grafik pekanan Alauddin')
+        getAPI("grafikpekananAlauddin").then(() => {
+              preloader.style.display = "none";
+          }).catch((error) => {
+              console.log(error)
+              preloader.style.display = "none";
+          })
+        setFalse()
+       }
+       else if (btnCobaAlauddin && btnCobaSatuBulan) {
+           
+          loader()
+          console.log('Ini grafik Satu Bulan Alauddin')
+          getAPI("grafikSatuBulanAlauddin").then(() => {
+              preloader.style.display = "none";
+          }).catch((error) => {
+              console.log(error)
+              preloader.style.display = "none";
+          })
+          setFalse()
+      }
+      else if (btnCobaAlauddin && btnCobaDuaBulan) {
+           
+          loader()
+          console.log('Ini grafik Dua Bulan Alauddin')
+          getAPI("grafikDuaBulanAlauddin").then(() => {
+              preloader.style.display = "none";
+          }).catch((error) => {
+              console.log(error)
+              preloader.style.display = "none";
+          })
+          setFalse()
+      }else if (btnCobaAlauddin && btnCobaTigaBulan) {
+           
+          loader()
+          console.log('Ini grafik Tiga Bulan Alauddin')
+          getAPI("grafikTigaBulanAlauddin").then(() => {
+              preloader.style.display = "none";
+          }).catch((error) => {
+              console.log(error)
+              preloader.style.display = "none";
+          })
+          setFalse()
+      }else if (btnCobaAlauddin && btnCobaEmpatBulan) {
+           
+          loader()
+          console.log('Ini grafik Empat Bulan Alauddin')
+          getAPI("grafikEmpatBulanAlauddin").then(() => {
+              preloader.style.display = "none";
+          }).catch((error) => {
+              console.log(error)
+              preloader.style.display = "none";
+          })
+          setFalse()
+      }else if (btnCobaAlauddin && btnCobaHarian) {
+           
+          loader()
+          console.log('Jalan Alauddin')
+          getAPI("grafikAlauddin").then(() => {
+              preloader.style.display = "none";
+          }).catch((error) => {
+              console.log(error)
+              preloader.style.display = "none";
+          })
+          setFalse()
+      }
+
+      // Baji Gau
+      else if (btnCobaBajiGau && btnCobaPekanan) {
+         
+        loader()
+        console.log('Ini grafik pekanan BajiGau')
+        getAPI("grafikpekananBajiGau").then(() => {
+              preloader.style.display = "none";
+          }).catch((error) => {
+              console.log(error)
+              preloader.style.display = "none";
+          })
+        setFalse()
+       }
+       else if (btnCobaBajiGau && btnCobaSatuBulan) {
+           
+          loader()
+          console.log('Ini grafik Satu Bulan BajiGau')
+          getAPI("grafikSatuBulanBajiGau").then(() => {
+              preloader.style.display = "none";
+          }).catch((error) => {
+              console.log(error)
+              preloader.style.display = "none";
+          })
+          setFalse()
+      }
+      else if (btnCobaBajiGau && btnCobaDuaBulan) {
+           
+          loader()
+          console.log('Ini grafik Dua Bulan BajiGau')
+          getAPI("grafikDuaBulanBajiGau").then(() => {
+              preloader.style.display = "none";
+          }).catch((error) => {
+              console.log(error)
+              preloader.style.display = "none";
+          })
+          setFalse()
+      }else if (btnCobaBajiGau && btnCobaTigaBulan) {
+           
+          loader()
+          console.log('Ini grafik Tiga Bulan BajiGau')
+          getAPI("grafikTigaBulanBajiGau").then(() => {
+              preloader.style.display = "none";
+          }).catch((error) => {
+              console.log(error)
+              preloader.style.display = "none";
+          })
+          setFalse()
+      }else if (btnCobaBajiGau && btnCobaEmpatBulan) {
+           
+          loader()
+          console.log('Ini grafik Empat Bulan BajiGau')
+          getAPI("grafikEmpatBulanBajiGau").then(() => {
+              preloader.style.display = "none";
+          }).catch((error) => {
+              console.log(error)
+              preloader.style.display = "none";
+          })
+          setFalse()
+      }else if (btnCobaBajiGau && btnCobaHarian) {
+           
+          loader()
+          console.log('Jalan BajiGau')
+          getAPI("grafikBajiGau").then(() => {
+              preloader.style.display = "none";
+          }).catch((error) => {
+              console.log(error)
+              preloader.style.display = "none";
+          })
+          setFalse()
+      }
+
+      // Barukang
+      else if (btnCobaBarukang && btnCobaPekanan) {
+         
+        loader()
+        console.log('Ini grafik pekanan Barukang')
+        getAPI("grafikpekananBarukang").then(() => {
+              preloader.style.display = "none";
+          }).catch((error) => {
+              console.log(error)
+              preloader.style.display = "none";
+          })
+        setFalse()
+       }
+       else if (btnCobaBarukang && btnCobaSatuBulan) {
+           
+          loader()
+          console.log('Ini grafik Satu Bulan Barukang')
+          getAPI("grafikSatuBulanBarukang").then(() => {
+              preloader.style.display = "none";
+          }).catch((error) => {
+              console.log(error)
+              preloader.style.display = "none";
+          })
+          setFalse()
+      }
+      else if (btnCobaBarukang && btnCobaDuaBulan) {
+           
+          loader()
+          console.log('Ini grafik Dua Bulan Barukang')
+          getAPI("grafikDuaBulanBarukang").then(() => {
+              preloader.style.display = "none";
+          }).catch((error) => {
+              console.log(error)
+              preloader.style.display = "none";
+          })
+          setFalse()
+      }else if (btnCobaBarukang && btnCobaTigaBulan) {
+           
+          loader()
+          console.log('Ini grafik Tiga Bulan Barukang')
+          getAPI("grafikTigaBulanBarukang").then(() => {
+              preloader.style.display = "none";
+          }).catch((error) => {
+              console.log(error)
+              preloader.style.display = "none";
+          })
+          setFalse()
+      }else if (btnCobaBarukang && btnCobaEmpatBulan) {
+           
+          loader()
+          console.log('Ini grafik Empat Bulan Barukang')
+          getAPI("grafikEmpatBulanBarukang").then(() => {
+              preloader.style.display = "none";
+          }).catch((error) => {
+              console.log(error)
+              preloader.style.display = "none";
+          })
+          setFalse()
+      }else if (btnCobaBarukang && btnCobaHarian) {
+           
+          loader()
+          console.log('Jalan Barukang')
+          getAPI("grafikBarukang").then(() => {
+              preloader.style.display = "none";
+          }).catch((error) => {
+              console.log(error)
+              preloader.style.display = "none";
+          })
+          setFalse()
+      }
+
+      // Cakalang Panampu
+      else if (btnCobaCakalang && btnCobaPekanan) {
+         
+        loader()
+        console.log('Ini grafik pekanan Cakalang')
+        getAPI("grafikpekananCakalang").then(() => {
+              preloader.style.display = "none";
+          }).catch((error) => {
+              console.log(error)
+              preloader.style.display = "none";
+          })
+        setFalse()
+       }
+       else if (btnCobaCakalang && btnCobaSatuBulan) {
+           
+          loader()
+          console.log('Ini grafik Satu Bulan Cakalang')
+          getAPI("grafikSatuBulanCakalang").then(() => {
+              preloader.style.display = "none";
+          }).catch((error) => {
+              console.log(error)
+              preloader.style.display = "none";
+          })
+          setFalse()
+      }
+      else if (btnCobaCakalang && btnCobaDuaBulan) {
+           
+          loader()
+          console.log('Ini grafik Dua Bulan Cakalang')
+          getAPI("grafikDuaBulanCakalang").then(() => {
+              preloader.style.display = "none";
+          }).catch((error) => {
+              console.log(error)
+              preloader.style.display = "none";
+          })
+          setFalse()
+      }else if (btnCobaCakalang && btnCobaTigaBulan) {
+           
+          loader()
+          console.log('Ini grafik Tiga Bulan Cakalang')
+          getAPI("grafikTigaBulanCakalang").then(() => {
+              preloader.style.display = "none";
+          }).catch((error) => {
+              console.log(error)
+              preloader.style.display = "none";
+          })
+          setFalse()
+      }else if (btnCobaCakalang && btnCobaEmpatBulan) {
+           
+          loader()
+          console.log('Ini grafik Empat Bulan Cakalang')
+          getAPI("grafikEmpatBulanCakalang").then(() => {
+              preloader.style.display = "none";
+          }).catch((error) => {
+              console.log(error)
+              preloader.style.display = "none";
+          })
+          setFalse()
+      }else if (btnCobaCakalang && btnCobaHarian) {
+           
+          loader()
+          console.log('Jalan Cakalang')
+          getAPI("grafikCakalang").then(() => {
+              preloader.style.display = "none";
+          }).catch((error) => {
+              console.log(error)
+              preloader.style.display = "none";
+          })
+          setFalse()
+      }
+
+      // Flyover
+      else if (btnCobaFlyover && btnCobaPekanan) {
+         
+        loader()
+        console.log('Ini grafik pekanan Flyover')
+        getAPI("grafikpekananFlyover").then(() => {
+              preloader.style.display = "none";
+          }).catch((error) => {
+              console.log(error)
+              preloader.style.display = "none";
+          })
+        setFalse()
+       }
+       else if (btnCobaFlyover && btnCobaSatuBulan) {
+           
+          loader()
+          console.log('Ini grafik Satu Bulan Flyover')
+          getAPI("grafikSatuBulanFlyover").then(() => {
+              preloader.style.display = "none";
+          }).catch((error) => {
+              console.log(error)
+              preloader.style.display = "none";
+          })
+          setFalse()
+      }
+      else if (btnCobaFlyover && btnCobaDuaBulan) {
+           
+          loader()
+          console.log('Ini grafik Dua Bulan Flyover')
+          getAPI("grafikDuaBulanFlyover").then(() => {
+              preloader.style.display = "none";
+          }).catch((error) => {
+              console.log(error)
+              preloader.style.display = "none";
+          })
+          setFalse()
+      }else if (btnCobaFlyover && btnCobaTigaBulan) {
+           
+          loader()
+          console.log('Ini grafik Tiga Bulan Flyover')
+          getAPI("grafikTigaBulanFlyover").then(() => {
+              preloader.style.display = "none";
+          }).catch((error) => {
+              console.log(error)
+              preloader.style.display = "none";
+          })
+          setFalse()
+      }else if (btnCobaFlyover && btnCobaEmpatBulan) {
+           
+          loader()
+          console.log('Ini grafik Empat Bulan Flyover')
+          getAPI("grafikEmpatBulanFlyover").then(() => {
+              preloader.style.display = "none";
+          }).catch((error) => {
+              console.log(error)
+              preloader.style.display = "none";
+          })
+          setFalse()
+      }else if (btnCobaFlyover && btnCobaHarian) {
+           
+          loader()
+          console.log('Jalan Flyover')
+          getAPI("grafikFlyover").then(() => {
+              preloader.style.display = "none";
+          }).catch((error) => {
+              console.log(error)
+              preloader.style.display = "none";
+          })
+          setFalse()
+      }
+
+      // Kajaolaliddo
+      else if (btnCobaKajaolaliddo && btnCobaPekanan) {
+         
+        loader()
+        console.log('Ini grafik pekanan Kajaolaliddo')
+        getAPI("grafikpekananKajaolaliddo").then(() => {
+              preloader.style.display = "none";
+          }).catch((error) => {
+              console.log(error)
+              preloader.style.display = "none";
+          })
+        setFalse()
+       }
+       else if (btnCobaKajaolaliddo && btnCobaSatuBulan) {
+           
+          loader()
+          console.log('Ini grafik Satu Bulan Kajaolaliddo')
+          getAPI("grafikSatuBulanKajaolaliddo").then(() => {
+              preloader.style.display = "none";
+          }).catch((error) => {
+              console.log(error)
+              preloader.style.display = "none";
+          })
+          setFalse()
+      }
+      else if (btnCobaKajaolaliddo && btnCobaDuaBulan) {
+           
+          loader()
+          console.log('Ini grafik Dua Bulan Kajaolaliddo')
+          getAPI("grafikDuaBulanKajaolaliddo").then(() => {
+              preloader.style.display = "none";
+          }).catch((error) => {
+              console.log(error)
+              preloader.style.display = "none";
+          })
+          setFalse()
+      }else if (btnCobaKajaolaliddo && btnCobaTigaBulan) {
+           
+          loader()
+          console.log('Ini grafik Tiga Bulan Kajaolaliddo')
+          getAPI("grafikTigaBulanKajaolaliddo").then(() => {
+              preloader.style.display = "none";
+          }).catch((error) => {
+              console.log(error)
+              preloader.style.display = "none";
+          })
+          setFalse()
+      }else if (btnCobaKajaolaliddo && btnCobaEmpatBulan) {
+           
+          loader()
+          console.log('Ini grafik Empat Bulan Kajaolaliddo')
+          getAPI("grafikEmpatBulanKajaolaliddo").then(() => {
+              preloader.style.display = "none";
+          }).catch((error) => {
+              console.log(error)
+              preloader.style.display = "none";
+          })
+          setFalse()
+      }else if (btnCobaKajaolaliddo && btnCobaHarian) {
+           
+          loader()
+          console.log('Jalan Kajaolaliddo')
+          getAPI("grafikKajaolaliddo").then(() => {
+              preloader.style.display = "none";
+          }).catch((error) => {
+              console.log(error)
+              preloader.style.display = "none";
+          })
+          setFalse()
+      }
+
+      // Tata Haji
+      else if (btnCobaTataHaji && btnCobaPekanan) {
+         
+        loader()
+        console.log('Ini grafik pekanan TataHaji')
+        getAPI("grafikpekananTataHaji").then(() => {
+              preloader.style.display = "none";
+          }).catch((error) => {
+              console.log(error)
+              preloader.style.display = "none";
+          })
+        setFalse()
+       }
+       else if (btnCobaTataHaji && btnCobaSatuBulan) {
+           
+          loader()
+          console.log('Ini grafik Satu Bulan TataHaji')
+          getAPI("grafikSatuBulanTataHaji").then(() => {
+              preloader.style.display = "none";
+          }).catch((error) => {
+              console.log(error)
+              preloader.style.display = "none";
+          })
+          setFalse()
+      }
+      else if (btnCobaTataHaji && btnCobaDuaBulan) {
+           
+          loader()
+          console.log('Ini grafik Dua Bulan TataHaji')
+          getAPI("grafikDuaBulanTataHaji").then(() => {
+              preloader.style.display = "none";
+          }).catch((error) => {
+              console.log(error)
+              preloader.style.display = "none";
+          })
+          setFalse()
+      }else if (btnCobaTataHaji && btnCobaTigaBulan) {
+           
+          loader()
+          console.log('Ini grafik Tiga Bulan TataHaji')
+          getAPI("grafikTigaBulanTataHaji").then(() => {
+              preloader.style.display = "none";
+          }).catch((error) => {
+              console.log(error)
+              preloader.style.display = "none";
+          })
+          setFalse()
+      }else if (btnCobaTataHaji && btnCobaEmpatBulan) {
+           
+          loader()
+          console.log('Ini grafik Empat Bulan TataHaji')
+          getAPI("grafikEmpatBulanTataHaji").then(() => {
+              preloader.style.display = "none";
+          }).catch((error) => {
+              console.log(error)
+              preloader.style.display = "none";
+          })
+          setFalse()
+      }else if (btnCobaTataHaji && btnCobaHarian) {
+           
+          loader()
+          console.log('Jalan TataHaji')
+          getAPI("grafikTataHaji").then(() => {
+              preloader.style.display = "none";
+          }).catch((error) => {
+              console.log(error)
+              preloader.style.display = "none";
+          })
+          setFalse()
+      }
+
   }
     
 // });
@@ -454,6 +1175,12 @@ async function getAPI(props){
     const TotalAdhyaksa = barChartData.kemacetan.map( (x) => x.akumulasi_adhyaksa_sirua)
     const TotalAlauddin = barChartData.kemacetan.map( (x) => x.akumulasi_alauddin)
     const TotalAmirullah = barChartData.kemacetan.map( (x) => x.akumulasi_amirullah)
+    const TotalBajiGau = barChartData.kemacetan.map( (x) => x.akumulasi_baji_gau)
+    const TotalBarukang = barChartData.kemacetan.map( (x) => x.akumulasi_barukang)
+    const TotalCakalang = barChartData.kemacetan.map( (x) => x.akumulasi_cakalang_panampu)
+    const TotalTataHaji = barChartData.kemacetan.map( (x) => x.akumulasi_dgtata_rshaji)
+    const TotalFlyover = barChartData.kemacetan.map( (x) => x.akumulasi_flyover)
+    const TotalKajaolaliddo = barChartData.kemacetan.map( (x) => x.akumulasi_kajaolaliddo_katedral)
 
     // Buat indeks
     let indexPekan = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
@@ -584,6 +1311,265 @@ async function getAPI(props){
         $('#periode').html(val)
         dataAPI = dataEmpatBulan(TotalAmirullah) 
         namaJalan = "Grafik Empat Bulan Jalan Amirullah"
+    }
+    else if (props == "jumlahMacet"){
+        $('#jumlahMacet').html(totalMacet())
+    }
+    // Abdul Kadir
+    else if (props == "grafikpekananAbdulKadir"){
+        $('#periode').html(val)
+        dataAPI = dataPekan(TotalAbdulKadir) 
+        namaJalan = "Grafik Pekanan Jalan AbdulKadir"
+        console.log(dataAPI)
+    }else if (props == "grafikSatuBulanAbdulKadir"){
+        $('#periode').html(val)
+        dataAPI = dataSatuBulan(TotalAbdulKadir) 
+        namaJalan = "Grafik Satu Bulan Jalan AbdulKadir"
+        console.log(dataAPI)
+    }else if (props == "grafikDuaBulanAbdulKadir"){
+        $('#periode').html(val)
+        dataAPI = dataDuaBulan(TotalAbdulKadir) 
+        namaJalan = "Grafik Dua Bulan Jalan AbdulKadir"
+        console.log(dataAPI)
+    }else if (props == "grafikTigaBulanAbdulKadir"){
+        $('#periode').html(val)
+        dataAPI = dataTigaBulan(TotalAbdulKadir) 
+        namaJalan = "Grafik Tiga Bulan Jalan AbdulKadir"
+    }else if (props == "grafikEmpatBulanAbdulKadir"){
+        $('#periode').html(val)
+        dataAPI = dataEmpatBulan(TotalAbdulKadir) 
+        namaJalan = "Grafik Empat Bulan Jalan AbdulKadir"
+    }
+    else if (props == "jumlahMacet"){
+        $('#jumlahMacet').html(totalMacet())
+    }
+    // Adhyaksa
+    else if (props == "grafikpekananAdhyaksa"){
+        $('#periode').html(val)
+        dataAPI = dataPekan(TotalAdhyaksa) 
+        namaJalan = "Grafik Pekanan Jalan Adhyaksa"
+        console.log(dataAPI)
+    }else if (props == "grafikSatuBulanAdhyaksa"){
+        $('#periode').html(val)
+        dataAPI = dataSatuBulan(TotalAdhyaksa) 
+        namaJalan = "Grafik Satu Bulan Jalan Adhyaksa"
+        console.log(dataAPI)
+    }else if (props == "grafikDuaBulanAdhyaksa"){
+        $('#periode').html(val)
+        dataAPI = dataDuaBulan(TotalAdhyaksa) 
+        namaJalan = "Grafik Dua Bulan Jalan Adhyaksa"
+        console.log(dataAPI)
+    }else if (props == "grafikTigaBulanAdhyaksa"){
+        $('#periode').html(val)
+        dataAPI = dataTigaBulan(TotalAdhyaksa) 
+        namaJalan = "Grafik Tiga Bulan Jalan Adhyaksa"
+    }else if (props == "grafikEmpatBulanAdhyaksa"){
+        $('#periode').html(val)
+        dataAPI = dataEmpatBulan(TotalAdhyaksa) 
+        namaJalan = "Grafik Empat Bulan Jalan Adhyaksa"
+    }
+    else if (props == "jumlahMacet"){
+        $('#jumlahMacet').html(totalMacet())
+    }
+
+    // Alauddin
+    else if (props == "grafikpekananAlauddin"){
+        $('#periode').html(val)
+        dataAPI = dataPekan(TotalAlauddin) 
+        namaJalan = "Grafik Pekanan Jalan Alauddin"
+        console.log(dataAPI)
+    }else if (props == "grafikSatuBulanAlauddin"){
+        $('#periode').html(val)
+        dataAPI = dataSatuBulan(TotalAlauddin) 
+        namaJalan = "Grafik Satu Bulan Jalan Alauddin"
+        console.log(dataAPI)
+    }else if (props == "grafikDuaBulanAlauddin"){
+        $('#periode').html(val)
+        dataAPI = dataDuaBulan(TotalAlauddin) 
+        namaJalan = "Grafik Dua Bulan Jalan Alauddin"
+        console.log(dataAPI)
+    }else if (props == "grafikTigaBulanAlauddin"){
+        $('#periode').html(val)
+        dataAPI = dataTigaBulan(TotalAlauddin) 
+        namaJalan = "Grafik Tiga Bulan Jalan Alauddin"
+    }else if (props == "grafikEmpatBulanAlauddin"){
+        $('#periode').html(val)
+        dataAPI = dataEmpatBulan(TotalAlauddin) 
+        namaJalan = "Grafik Empat Bulan Jalan Alauddin"
+    }
+    else if (props == "jumlahMacet"){
+        $('#jumlahMacet').html(totalMacet())
+    }
+
+    // Baji Gau
+    else if (props == "grafikpekananBajiGau"){
+        $('#periode').html(val)
+        dataAPI = dataPekan(TotalBajiGau) 
+        namaJalan = "Grafik Pekanan Jalan BajiGau"
+        console.log(dataAPI)
+    }else if (props == "grafikSatuBulanBajiGau"){
+        $('#periode').html(val)
+        dataAPI = dataSatuBulan(TotalBajiGau) 
+        namaJalan = "Grafik Satu Bulan Jalan BajiGau"
+        console.log(dataAPI)
+    }else if (props == "grafikDuaBulanBajiGau"){
+        $('#periode').html(val)
+        dataAPI = dataDuaBulan(TotalBajiGau) 
+        namaJalan = "Grafik Dua Bulan Jalan BajiGau"
+        console.log(dataAPI)
+    }else if (props == "grafikTigaBulanBajiGau"){
+        $('#periode').html(val)
+        dataAPI = dataTigaBulan(TotalBajiGau) 
+        namaJalan = "Grafik Tiga Bulan Jalan BajiGau"
+    }else if (props == "grafikEmpatBulanBajiGau"){
+        $('#periode').html(val)
+        dataAPI = dataEmpatBulan(TotalBajiGau) 
+        namaJalan = "Grafik Empat Bulan Jalan BajiGau"
+    }
+    else if (props == "jumlahMacet"){
+        $('#jumlahMacet').html(totalMacet())
+    }
+
+    // Barukang
+    else if (props == "grafikpekananBarukang"){
+        $('#periode').html(val)
+        dataAPI = dataPekan(TotalBarukang) 
+        namaJalan = "Grafik Pekanan Jalan Barukang"
+        console.log(dataAPI)
+    }else if (props == "grafikSatuBulanBarukang"){
+        $('#periode').html(val)
+        dataAPI = dataSatuBulan(TotalBarukang) 
+        namaJalan = "Grafik Satu Bulan Jalan Barukang"
+        console.log(dataAPI)
+    }else if (props == "grafikDuaBulanBarukang"){
+        $('#periode').html(val)
+        dataAPI = dataDuaBulan(TotalBarukang) 
+        namaJalan = "Grafik Dua Bulan Jalan Barukang"
+        console.log(dataAPI)
+    }else if (props == "grafikTigaBulanBarukang"){
+        $('#periode').html(val)
+        dataAPI = dataTigaBulan(TotalBarukang) 
+        namaJalan = "Grafik Tiga Bulan Jalan Barukang"
+    }else if (props == "grafikEmpatBulanBarukang"){
+        $('#periode').html(val)
+        dataAPI = dataEmpatBulan(TotalBarukang) 
+        namaJalan = "Grafik Empat Bulan Jalan Barukang"
+    }
+    else if (props == "jumlahMacet"){
+        $('#jumlahMacet').html(totalMacet())
+    }
+
+    // Cakalang Panampu
+    else if (props == "grafikpekananCakalang"){
+        $('#periode').html(val)
+        dataAPI = dataPekan(TotalCakalang) 
+        namaJalan = "Grafik Pekanan Jalan Cakalang"
+        console.log(dataAPI)
+    }else if (props == "grafikSatuBulanCakalang"){
+        $('#periode').html(val)
+        dataAPI = dataSatuBulan(TotalCakalang) 
+        namaJalan = "Grafik Satu Bulan Jalan Cakalang"
+        console.log(dataAPI)
+    }else if (props == "grafikDuaBulanCakalang"){
+        $('#periode').html(val)
+        dataAPI = dataDuaBulan(TotalCakalang) 
+        namaJalan = "Grafik Dua Bulan Jalan Cakalang"
+        console.log(dataAPI)
+    }else if (props == "grafikTigaBulanCakalang"){
+        $('#periode').html(val)
+        dataAPI = dataTigaBulan(TotalCakalang) 
+        namaJalan = "Grafik Tiga Bulan Jalan Cakalang"
+    }else if (props == "grafikEmpatBulanCakalang"){
+        $('#periode').html(val)
+        dataAPI = dataEmpatBulan(TotalCakalang) 
+        namaJalan = "Grafik Empat Bulan Jalan Cakalang"
+    }
+    else if (props == "jumlahMacet"){
+        $('#jumlahMacet').html(totalMacet())
+    }
+    
+    // Flyover
+    else if (props == "grafikpekananFlyover"){
+        $('#periode').html(val)
+        dataAPI = dataPekan(TotalFlyover) 
+        namaJalan = "Grafik Pekanan Jalan Flyover"
+        console.log(dataAPI)
+    }else if (props == "grafikSatuBulanFlyover"){
+        $('#periode').html(val)
+        dataAPI = dataSatuBulan(TotalFlyover) 
+        namaJalan = "Grafik Satu Bulan Jalan Flyover"
+        console.log(dataAPI)
+    }else if (props == "grafikDuaBulanFlyover"){
+        $('#periode').html(val)
+        dataAPI = dataDuaBulan(TotalFlyover) 
+        namaJalan = "Grafik Dua Bulan Jalan Flyover"
+        console.log(dataAPI)
+    }else if (props == "grafikTigaBulanFlyover"){
+        $('#periode').html(val)
+        dataAPI = dataTigaBulan(TotalFlyover) 
+        namaJalan = "Grafik Tiga Bulan Jalan Flyover"
+    }else if (props == "grafikEmpatBulanFlyover"){
+        $('#periode').html(val)
+        dataAPI = dataEmpatBulan(TotalFlyover) 
+        namaJalan = "Grafik Empat Bulan Jalan Flyover"
+    }
+    else if (props == "jumlahMacet"){
+        $('#jumlahMacet').html(totalMacet())
+    }
+
+    // Kajaolaliddo
+    else if (props == "grafikpekananKajaolaliddo"){
+        $('#periode').html(val)
+        dataAPI = dataPekan(TotalKajaolaliddo) 
+        namaJalan = "Grafik Pekanan Jalan Kajaolaliddo"
+        console.log(dataAPI)
+    }else if (props == "grafikSatuBulanKajaolaliddo"){
+        $('#periode').html(val)
+        dataAPI = dataSatuBulan(TotalKajaolaliddo) 
+        namaJalan = "Grafik Satu Bulan Jalan Kajaolaliddo"
+        console.log(dataAPI)
+    }else if (props == "grafikDuaBulanKajaolaliddo"){
+        $('#periode').html(val)
+        dataAPI = dataDuaBulan(TotalKajaolaliddo) 
+        namaJalan = "Grafik Dua Bulan Jalan Kajaolaliddo"
+        console.log(dataAPI)
+    }else if (props == "grafikTigaBulanKajaolaliddo"){
+        $('#periode').html(val)
+        dataAPI = dataTigaBulan(TotalKajaolaliddo) 
+        namaJalan = "Grafik Tiga Bulan Jalan Kajaolaliddo"
+    }else if (props == "grafikEmpatBulanKajaolaliddo"){
+        $('#periode').html(val)
+        dataAPI = dataEmpatBulan(TotalKajaolaliddo) 
+        namaJalan = "Grafik Empat Bulan Jalan Kajaolaliddo"
+    }
+    else if (props == "jumlahMacet"){
+        $('#jumlahMacet').html(totalMacet())
+    }
+
+    // Tata Haji
+    else if (props == "grafikpekananTataHaji"){
+        $('#periode').html(val)
+        dataAPI = dataPekan(TotalTataHaji) 
+        namaJalan = "Grafik Pekanan Jalan TataHaji"
+        console.log(dataAPI)
+    }else if (props == "grafikSatuBulanTataHaji"){
+        $('#periode').html(val)
+        dataAPI = dataSatuBulan(TotalTataHaji) 
+        namaJalan = "Grafik Satu Bulan Jalan TataHaji"
+        console.log(dataAPI)
+    }else if (props == "grafikDuaBulanTataHaji"){
+        $('#periode').html(val)
+        dataAPI = dataDuaBulan(TotalTataHaji) 
+        namaJalan = "Grafik Dua Bulan Jalan TataHaji"
+        console.log(dataAPI)
+    }else if (props == "grafikTigaBulanTataHaji"){
+        $('#periode').html(val)
+        dataAPI = dataTigaBulan(TotalTataHaji) 
+        namaJalan = "Grafik Tiga Bulan Jalan TataHaji"
+    }else if (props == "grafikEmpatBulanTataHaji"){
+        $('#periode').html(val)
+        dataAPI = dataEmpatBulan(TotalTataHaji) 
+        namaJalan = "Grafik Empat Bulan Jalan TataHaji"
     }
     else if (props == "jumlahMacet"){
         $('#jumlahMacet').html(totalMacet())
