@@ -1,0 +1,376 @@
+.nav-link{
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-size: 20px;
+  line-height: 24px;
+  color: #0093DD;
+}
+span{
+  color: #0093DD;
+}
+.jumbotron {
+  padding: 2rem 1rem;
+}
+
+/* Card */
+.card{
+  box-shadow: 0px 5px 30px 5px rgba(0,0,0,0.07);
+  overflow: hidden;
+  border-radius: 10px;
+  border: 0ch;
+}
+.card-title{
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 30px;
+}
+.card-text{
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 30px;
+}
+#data .input-group-text{
+border: 0;
+}
+#data .form-control{
+border: 0;
+padding: 0;
+}
+
+/* Jumbotron */
+.jumbotron{
+background-color: #fff;
+}
+.display-4{
+  height: 30px;
+  letter-spacing: -0.015em;
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 39.7173px;
+  line-height: 40px;
+}
+.lead{
+  margin-top: 4ch;
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 30px;
+  letter-spacing: -0.015em;
+}
+.col{
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 22px;
+  /* margin-top: 1cm;
+  margin-left: 1cm; */
+}
+.judul2{
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 22px;
+  margin-top: 1ch;
+}
+.btn{
+  background: #F0F2F6;
+  border-radius: 20px;
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-size: 19px;
+}
+
+/* Dropdown Kemacetan */
+.btndropdown{
+  background: #fff0;
+  border: 0;
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-size: 32px;
+  color: #3d3d3d;
+}
+
+#dropdown .dropdown-item{
+  background: #ffffff00;
+  border: 0;
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-size: 25px;
+}
+
+/* Data Statistik */
+section#maps .judul-statistik{
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 22px;
+}
+
+.col-md.opsi-grafik {
+width: fit-content;
+}
+
+section#maps a.list-kota{
+text-decoration: none;
+}
+
+section#maps .list-group{
+height: 350px;
+overflow-y: scroll;
+}
+
+
+/*--------------------------------------------------------------
+# Footer
+--------------------------------------------------------------*/
+#footer {
+  font-size: 14px;
+  background: #00356D;
+}
+
+#footer .footer-links p{
+  margin-bottom: 0;
+}
+
+#footer .social-links a {
+  font-size: 18px;
+  display: inline-block;
+  background: #00356D;
+  color: #fff;
+  line-height: 1;
+  padding: 8px 0;
+  border-radius: 50%;
+  text-align: center;
+  width: 36px;
+  height: 36px;
+  transition: 0.3s;
+}
+
+#footer .social-links a:hover {
+  background: #0093DD;
+  color: #fff;
+  text-decoration: none;
+}
+
+#footer .footer-bottom {
+  font-family: Montserrat;
+  margin-top: 1cm;
+  padding-top: 30px;
+  padding-bottom: 10px;
+  color: #fff;
+}
+
+#footer .copyright {
+  float: left;
+}
+
+#footer .credits {
+  float: right;
+  font-size: 13px;
+}
+
+#footer .credits a {
+  transition: 0.3s;
+}
+
+@media (max-width: 768px) {
+  #footer .footer-bottom {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  #footer .copyright,
+  #footer .credits {
+    text-align: center;
+    float: none;
+  }
+
+  #footer .credits {
+    padding-top: 4px;
+  }
+}
+
+/*--------------------------------------------------------------
+# BERITA
+--------------------------------------------------------------*/
+#berita .img{
+height:150px;
+width:100%;
+}
+
+#berita div [class^="col-"]{
+padding-left:5px;
+padding-right:5px;
+}
+#berita .card{
+transition:0.5s;
+cursor:pointer;
+}
+#berita .card-title{  
+font-size:15px;
+transition:1s;
+cursor:pointer;
+}
+#berita .card-title i{  
+font-size:15px;
+transition:1s;
+cursor:pointer;
+color:#ffa710
+}
+#berita .card-title i:hover{
+transform: scale(1.25) rotate(100deg); 
+color:#18d4ca;
+
+}
+#berita .card:hover{
+transform: scale(1.05);
+box-shadow: 10px 10px 15px rgba(0,0,0,0.3);
+}
+#berita .card-text{
+height:80px;  
+font-size: 18px;
+font-weight: 100;
+line-height: normal;
+}
+
+#berita .card::before, .card::after {
+position: absolute;
+top: 0;
+right: 0;
+bottom: 0;
+left: 0;
+transform: scale3d(0, 0, 1);
+transition: transform .3s ease-out 0s;
+background: rgba(255, 255, 255, 0.1);
+content: '';
+pointer-events: none;
+}
+
+#berita .card::before {
+transform-origin: left top;
+}
+
+#berita .card::after {
+transform-origin: right bottom;
+}
+
+#berita .card:hover::before, .card:hover::after, .card:focus::before, .card:focus::after {
+transform: scale3d(1, 1, 1);
+}
+
+/*--------------------------------------------------------------
+# Cta
+--------------------------------------------------------------*/
+.cta {
+background: linear-gradient(rgba(205, 222, 255, 0.64), rgba(205, 222, 255, 0.64)), url("img/building.png") fixed center center;
+background-size: cover;
+padding: 120px 0;
+font-family: "montserrat";
+}
+
+.cta h3 {
+color: #3d3d3d;
+font-size: 30px;
+font-weight: 700;
+line-height: 0.1;
+}
+
+.cta h2 {
+color: #0074E9;
+font-size: 28px;
+font-weight: 700;
+}
+
+.cta p {
+color: #3d3d3d;
+}
+
+.cta .cta-btn {
+font-weight: 500;
+font-size: 16px;
+letter-spacing: 1px;
+display: inline-block;
+padding: 12px 40px;
+border-radius: 50px;
+transition: 0.5s;
+margin: 10px;
+border: 2px solid #fff;
+color: #fff;
+}
+
+.cta .cta-btn:hover {
+background: #47b2e4;
+border: 2px solid #47b2e4;
+}
+
+@media (max-width: 1024px) {
+.cta {
+  background-attachment: scroll;
+}
+}
+
+@media (min-width: 769px) {
+.cta .cta-btn-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+}
+
+/*--------------------------------------------------------------
+# Pricing
+--------------------------------------------------------------*/
+.pricing {
+padding: 80px 0;
+font-family: "montserrat";
+}
+
+.pricing h3 {
+padding-top: 50px;
+font-size: 30px;
+}
+
+.pricing .isi {
+border-left: 2px solid #0074E9;
+height: 200px;
+}
+
+.pricing h1{
+color: #0074E9;
+font-size: 20px;
+font-weight: 700;
+}
+
+.pricing .number p{
+text-align: right;
+color: #0074E9;
+font-size: 35px;
+font-weight: 700;
+}
+
+.grafik-statistik {
+display: flex;
+}
+
+.grafik-cctv .statistik-container{
+margin: 50px 100px;
+padding: 50px 100px;
+} 
+
+.grafik-cctv .row .index-harian {
+margin-right: 200px;
+}
+
+#preloader {
+  margin: 80px 250px;
+  display: none;
+}
+.preloader.show{
+  display: block;
+}
